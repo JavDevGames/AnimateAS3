@@ -3,6 +3,8 @@ package
 	import animations.AnimController;
 	import animations.AnimObject;
 	import animations.attentionseekers.AttentionSeekers;
+	import animations.bouncingentrances.BouncingEntrances;
+	import animations.bouncingexits.BouncingExits;
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.Sprite;
@@ -51,7 +53,7 @@ package
 			
 			mAnimController = new AnimController();
 			
-			var bounce:AnimObject = AttentionSeekers.Wobble();
+			var bounce:AnimObject = BouncingExits.BounceOutUp();
 			bounce.SetTarget(mSprite);
 			mAnimController.AddAnimObject(bounce);
 			

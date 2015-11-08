@@ -75,7 +75,7 @@ package animations
 				{
 					mElapsedTime = 0;
 					mLastTime = -1;
-					mState = STATE_ANIMATING;
+					mState = STATE_COMPLETE;
 				}
 			}
 			else
