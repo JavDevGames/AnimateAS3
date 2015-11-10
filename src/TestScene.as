@@ -6,6 +6,9 @@ package
 	import animations.fadingentrances.FadeInEntrances;
 	import animations.fadingexits.FadingExits;
 	import animations.rotatingentrances.RotatingEntrances;
+	import animations.rotatingexits.RotatingExits;
+	import animations.slidingentrances.SlidingEntrances;
+	import animations.slidingexits.SlidingExits;
 	import flash.display.BitmapData;
 	import starling.animation.Tween;
 	import starling.core.Starling;
@@ -28,7 +31,7 @@ package
 			mTestImage.x = Starling.current.viewPort.width / 2 - mTestImage.width / 2;
 			mTestImage.y = Starling.current.viewPort.height / 2 - mTestImage.height / 2;
 			
-			var testAnim:Tween = RotatingEntrances.RotateInUpRight(mTestImage, 1000);
+			var testAnim:Tween = SlidingExits.SlideOutUp(mTestImage, 1000);
 			Starling.juggler.add(testAnim);
 			
 			addChild(mTestImage);
