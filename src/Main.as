@@ -1,13 +1,5 @@
 package
 {
-	import animations.AnimController;
-	import animations.AnimObject;
-	import animations.attentionseekers.AttentionSeekers;
-	import animations.bouncingentrances.BouncingEntrances;
-	import animations.bouncingexits.BouncingExits;
-	import animations.fadingentrances.FadeInEntrances;
-	import flash.display.Bitmap;
-	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.utils.getTimer;
@@ -19,7 +11,6 @@ package
 	 */
 	public class Main extends Sprite 
 	{
-		private var mAnimController:AnimController;
 		private var mHolder:Sprite;
 		private var mSprite:Sprite;
 		private var mStarling:Starling;
