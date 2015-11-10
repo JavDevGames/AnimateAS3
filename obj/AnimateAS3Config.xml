@@ -14,7 +14,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'08-11-2015'</value>
+      <value>'10-11-2015'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -33,6 +33,9 @@
       <path-element>C:\Projects\AnimateAS3\src</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
+    <library-path append="true">
+      <path-element>C:\Projects\AnimateAS3\lib\starling.swc</path-element>
+    </library-path>
   </compiler>
   <file-specs>
     <path-element>C:\Projects\AnimateAS3\src\Main.as</path-element>

@@ -1,158 +1,221 @@
 package animations.bouncingentrances 
 {
-	import animations.AnimObject;
-	import animations.KeyFrame;
-	import transforms.Transforms;
+	import flash.geom.Point;
+	import starling.animation.Transitions;
+	import starling.animation.Tween;
+	import starling.display.DisplayObject;
 	/**
 	 * ...
 	 * @author Javier
 	 */
 	public class BouncingEntrances 
 	{
-		
-		public static function BounceIn():AnimObject
+		public static function BounceIn(target:DisplayObject, duration:Number):Tween
 		{
-			var animObject:AnimObject = new AnimObject();
-			var keyFrame:KeyFrame;
+			var i:int;
+			var timing:Vector.<Number> = new <Number>[0.2,0.2,0.2,0.2,0.2,0.2];
+			var opacities:Vector.<Number> = new <Number>[
+														0,
+														1,
+														1,
+														1,
+														1,
+														1
+													];
+			var scales:Vector.<Number> = new <Number>[
+														0.3,
+														1.1,
+														0.9,
+														1.03,
+														0.97,
+														1
+													];
+													
+			var rootTween:Tween = new Tween(target, duration * timing[0], Transitions.EASE_IN);
+			rootTween.fadeTo(opacities[0]);				
+			rootTween.scaleTo(scales[0]);
 			
-			keyFrame = animObject.AddKeyFrame(0);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 0);
-			keyFrame.AddConfig(Transforms.Scale, 0.3,0.3);
+			var nextTween:Tween;
+			var curTween:Tween = rootTween;
 			
-			keyFrame = animObject.AddKeyFrame(20);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 1);
-			keyFrame.AddConfig(Transforms.Scale, 1.1,1.1);
-			
-			keyFrame = animObject.AddKeyFrame(40);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Scale, 0.9,0.9);
-			
-			keyFrame = animObject.AddKeyFrame(60);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 1);
-			keyFrame.AddConfig(Transforms.Scale, 1.03,1.03);
-			
-			keyFrame = animObject.AddKeyFrame(80);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Scale, 0.97,0.97);
-			
-			keyFrame = animObject.AddKeyFrame(100);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 1);
-			keyFrame.AddConfig(Transforms.Scale, 1,1);
-			
-			return animObject;
+			for (i = 1; i < timing.length; ++i)
+			{
+				nextTween = new Tween(target, duration * timing[i], Transitions.EASE_IN);				
+				nextTween.fadeTo(opacities[i]);				
+				nextTween.scaleTo(scales[i]);
+				
+				curTween.nextTween = nextTween;
+				curTween = nextTween;
+			}
+
+			target.pivotX = target.width / 2;
+			target.pivotY = target.height / 2;
+
+			return rootTween;
 		}
 		
-		public static function BounceInDown():AnimObject
+		public static function BounceInDown(target:DisplayObject, duration:Number):Tween
 		{
-			var animObject:AnimObject = new AnimObject();
-			var keyFrame:KeyFrame;
+			var i:int;
+			var timing:Vector.<Number> = new <Number>[0,0.6,0.15,0.15];
+			var opacities:Vector.<Number> = new <Number>[
+															0,
+															1,
+															1,
+															1
+													];
 			
-			keyFrame = animObject.AddKeyFrame(0);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 0);
-			keyFrame.AddConfig(Transforms.Translate, 0,-1500,0);
+			var positions:Vector.<Point> = new <Point>[
+														new Point(target.x, target.y-1500),
+														new Point(target.x, target.y+25),
+														new Point(target.x, target.y-10),
+														new Point(target.x, target.y+5)
+													];
+													
+			var rootTween:Tween = new Tween(target, duration * timing[0], Transitions.EASE_IN);
+			rootTween.fadeTo(opacities[0]);				
+			rootTween.moveTo(positions[0].x,positions[0].y);
 			
-			keyFrame = animObject.AddKeyFrame(60);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 1);
-			keyFrame.AddConfig(Transforms.Translate, 0,25,0);
+			var nextTween:Tween;
+			var curTween:Tween = rootTween;
 			
-			keyFrame = animObject.AddKeyFrame(75);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Translate, 0,-10,0);
-			
-			keyFrame = animObject.AddKeyFrame(90);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Translate, 0, 5,0);
-			
-			return animObject;
+			for (i = 1; i < timing.length; ++i)
+			{
+				nextTween = new Tween(target, duration * timing[i], Transitions.EASE_IN);				
+				nextTween.fadeTo(opacities[i]);				
+				nextTween.moveTo(positions[i].x,positions[i].y);
+				
+				curTween.nextTween = nextTween;
+				curTween = nextTween;
+			}
+
+			target.pivotX = target.width / 2;
+			target.pivotY = target.height / 2;
+
+			return rootTween;
 		}
 		
-		public static function BounceInLeft():AnimObject
+		public static function BounceInUp(target:DisplayObject, duration:Number):Tween
 		{
-			var animObject:AnimObject = new AnimObject();
-			var keyFrame:KeyFrame;
+			var i:int;
+			var timing:Vector.<Number> = new <Number>[0,0.6,0.15,0.15];
+			var opacities:Vector.<Number> = new <Number>[
+															0,
+															1,
+															1,
+															1
+													];
 			
-			keyFrame = animObject.AddKeyFrame(0);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 0);
-			keyFrame.AddConfig(Transforms.Translate, -3000,0,0);
+			var positions:Vector.<Point> = new <Point>[
+														new Point(target.x, target.y+1500),
+														new Point(target.x, target.y-25),
+														new Point(target.x, target.y+10),
+														new Point(target.x, target.y-5)
+													];
+													
+			var rootTween:Tween = new Tween(target, duration * timing[0], Transitions.EASE_IN);
+			rootTween.fadeTo(opacities[0]);				
+			rootTween.moveTo(positions[0].x,positions[0].y);
 			
-			keyFrame = animObject.AddKeyFrame(60);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 1);
-			keyFrame.AddConfig(Transforms.Translate, 25,0,0);
+			var nextTween:Tween;
+			var curTween:Tween = rootTween;
 			
-			keyFrame = animObject.AddKeyFrame(75);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Translate, -10,0,0);
-			
-			keyFrame = animObject.AddKeyFrame(90);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Translate, 5, 0, 0);
-			
-			return animObject;
+			for (i = 1; i < timing.length; ++i)
+			{
+				nextTween = new Tween(target, duration * timing[i], Transitions.EASE_IN);				
+				nextTween.fadeTo(opacities[i]);				
+				nextTween.moveTo(positions[i].x,positions[i].y);
+				
+				curTween.nextTween = nextTween;
+				curTween = nextTween;
+			}
+
+			target.pivotX = target.width / 2;
+			target.pivotY = target.height / 2;
+
+			return rootTween;
 		}
 		
-		public static function BounceInRight():AnimObject
+		public static function BounceInLeft(target:DisplayObject, duration:Number):Tween
 		{
-			var animObject:AnimObject = new AnimObject();
-			var keyFrame:KeyFrame;
+			var i:int;
+			var timing:Vector.<Number> = new <Number>[0,0.6,0.15,0.15];
+			var opacities:Vector.<Number> = new <Number>[
+															0,
+															1,
+															1,
+															1
+													];
 			
-			keyFrame = animObject.AddKeyFrame(0);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 0);
-			keyFrame.AddConfig(Transforms.Translate, 3000,0,0);
+			var positions:Vector.<Point> = new <Point>[
+														new Point(target.x-1500, target.y),
+														new Point(target.x+25, target.y),
+														new Point(target.x-10, target.y),
+														new Point(target.x+5, target.y)
+													];
+													
+			var rootTween:Tween = new Tween(target, duration * timing[0], Transitions.EASE_IN);
+			rootTween.fadeTo(opacities[0]);				
+			rootTween.moveTo(positions[0].x,positions[0].y);
 			
-			keyFrame = animObject.AddKeyFrame(60);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 1);
-			keyFrame.AddConfig(Transforms.Translate, -25,0,0);
+			var nextTween:Tween;
+			var curTween:Tween = rootTween;
 			
-			keyFrame = animObject.AddKeyFrame(75);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Translate, 10,0,0);
-			
-			keyFrame = animObject.AddKeyFrame(90);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Translate, -5, 0, 0);
-			
-			return animObject;
+			for (i = 1; i < timing.length; ++i)
+			{
+				nextTween = new Tween(target, duration * timing[i], Transitions.EASE_IN);				
+				nextTween.fadeTo(opacities[i]);				
+				nextTween.moveTo(positions[i].x,positions[i].y);
+				
+				curTween.nextTween = nextTween;
+				curTween = nextTween;
+			}
+
+			target.pivotX = target.width / 2;
+			target.pivotY = target.height / 2;
+
+			return rootTween;
 		}
 		
-		public static function BounceInUp():AnimObject
+		public static function BounceInRight(target:DisplayObject, duration:Number):Tween
 		{
-			var animObject:AnimObject = new AnimObject();
-			var keyFrame:KeyFrame;
+			var i:int;
+			var timing:Vector.<Number> = new <Number>[0,0.6,0.15,0.15];
+			var opacities:Vector.<Number> = new <Number>[
+															0,
+															1,
+															1,
+															1
+													];
 			
-			keyFrame = animObject.AddKeyFrame(0);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 0);
-			keyFrame.AddConfig(Transforms.Translate, 0,3000,0);
+			var positions:Vector.<Point> = new <Point>[
+														new Point(target.x+1500, target.y),
+														new Point(target.x-25, target.y),
+														new Point(target.x+10, target.y),
+														new Point(target.x-5, target.y)
+													];
+													
+			var rootTween:Tween = new Tween(target, duration * timing[0], Transitions.EASE_IN);
+			rootTween.fadeTo(opacities[0]);				
+			rootTween.moveTo(positions[0].x,positions[0].y);
 			
-			keyFrame = animObject.AddKeyFrame(60);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Opacity, 1);
-			keyFrame.AddConfig(Transforms.Translate, 0,-20,0);
+			var nextTween:Tween;
+			var curTween:Tween = rootTween;
 			
-			keyFrame = animObject.AddKeyFrame(75);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Translate, 0,10,0);
-			
-			keyFrame = animObject.AddKeyFrame(90);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Translate, 0, -5, 0);
-			
-			keyFrame = animObject.AddKeyFrame(100);
-			keyFrame.AddAnimFunction(Transforms.CubicBezier, 0.215, 0.610, 0.355, 1.000);
-			keyFrame.AddConfig(Transforms.Translate, 0,0,0);
-			
-			return animObject;
+			for (i = 1; i < timing.length; ++i)
+			{
+				nextTween = new Tween(target, duration * timing[i], Transitions.EASE_IN);				
+				nextTween.fadeTo(opacities[i]);				
+				nextTween.moveTo(positions[i].x,positions[i].y);
+				
+				curTween.nextTween = nextTween;
+				curTween = nextTween;
+			}
+
+			target.pivotX = target.width / 2;
+			target.pivotY = target.height / 2;
+
+			return rootTween;
 		}
 	}
-
 }

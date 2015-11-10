@@ -23,16 +23,18 @@ package animations
 		
 		private static const STATE_ANIMATING:int = 0;
 		private static const STATE_COMPLETE:int = 1;
+		private static const STATE_INIT:int = 2;
 		private var mState:int;
 		
-		public function AnimObject() 
+		public function AnimObject(target:Sprite) 
 		{
 			mKeyFrames = new Dictionary;
 			mDuration = 1000;
 			mFrameRate = 60;
 			mElapsedTime = 0;
 			mLastTime = -1;
-			mState = STATE_ANIMATING;
+			mTarget = target;
+			mState = STATE_INIT;
 			UpdateActiveKeyFrame(0);
 		}
 		
@@ -42,13 +44,20 @@ package animations
 			return mKeyFrames[value];
 		}
 		
-		public function SetTarget(target:Sprite):void
+		public function Enter():void
 		{
-			mTarget = target;
+			var active:KeyFrame = mKeyFrames[0];
+			var t:Number = 0;
+			
+			active.Enter(mTarget);
+			mState = STATE_ANIMATING;
 		}
 		
 		public function Update(time:Number):void
 		{
+			var active:KeyFrame;
+			var t:Number;
+			
 			if (mState == STATE_ANIMATING)
 			{
 				if (mLastTime == -1)
@@ -64,8 +73,8 @@ package animations
 				var timeAsKeyFrame:Number = (mElapsedTime / mDuration) * 100;
 				var progress:Number = (timeAsKeyFrame-mActiveKeyFrame) / mKeyFrameDuration;
 				
-				var active:KeyFrame = mKeyFrames[mActiveKeyFrame];
-				var t:Number = Math.max(0, Math.min(progress, 1));
+				active = mKeyFrames[mActiveKeyFrame];
+				t = Math.max(0, Math.min(progress, 1));
 				
 				active.Update(t, mTarget);
 				

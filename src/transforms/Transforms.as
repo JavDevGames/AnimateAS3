@@ -44,10 +44,14 @@ package transforms
 			var diff:Number = val - target.alpha;
 			target.alpha += (diff * t);
 			
+			/*
 			if (t == 1)
 			{
 				target.alpha = val;
 			}
+			*/
+			
+			trace("alpha:" + target.alpha);
 		}
 		
 		public static function Skew(skewX:Number, skewY:Number, t:Number, target:Sprite):void

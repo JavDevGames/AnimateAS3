@@ -27,12 +27,14 @@ package animations
 			mConfigs.push( { func:configFunction, params:rest } );
 		}
 		
+		public function Enter(target:Sprite):void
+		{
+			Evaluate(1, target); //this forces the value to be the initial value
+		}
+		
 		public function Update(time:Number, target:Sprite):void
 		{
-			var i:int;
 			var posY:Number;
-			var evalFunc:Function;
-			var evalParams:Array;
 			var t:Number;
 			
 			t = time;
@@ -42,6 +44,15 @@ package animations
 				mAnimParams[4] = time;
 				t = mAnimFunction.apply(this, mAnimParams);
 			}
+			
+			Evaluate(t, target);
+		}
+		
+		public function Evaluate(t:Number, target:Sprite):void
+		{
+			var i:int;
+			var evalFunc:Function;
+			var evalParams:Array;
 			
 			for (i = 0; i < mConfigs.length; ++i)
 			{
@@ -75,5 +86,6 @@ package animations
 			}
 		}
 	}
+	
 
 }
