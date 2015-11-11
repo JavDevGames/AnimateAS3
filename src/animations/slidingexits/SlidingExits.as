@@ -1,5 +1,6 @@
 package animations.slidingexits 
 {
+	import animations.TweenUtil;
 	import flash.geom.Point;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
@@ -16,26 +17,12 @@ package animations.slidingexits
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x,target.y+100)];
 			
-			var rootTween:Tween = new Tween(target, duration * timing[0], Transitions.EASE_IN);
-			rootTween.moveTo(positions[0].x, positions[0].y);
+			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions);
 			
-			var nextTween:Tween;
-			var curTween:Tween = rootTween;
-			
-			for (i = 1; i < timing.length; ++i)
-			{
-				nextTween = new Tween(target, duration * (timing[i]), Transitions.EASE_IN);
-				nextTween.moveTo(positions[i].x, positions[i].y);
-				curTween.nextTween = nextTween;
-				
-				//move it forward
-				curTween = nextTween;
-			}
-			
-			target.pivotX = target.width / 2;
+			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
 			
-			return rootTween;
+			return tween;
 		}
 		
 		public static function SlideOutUp(target:DisplayObject, duration:Number):Tween
@@ -44,26 +31,12 @@ package animations.slidingexits
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x,target.y-100)];
 			
-			var rootTween:Tween = new Tween(target, duration * timing[0], Transitions.EASE_IN);
-			rootTween.moveTo(positions[0].x, positions[0].y);
+			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions);
 			
-			var nextTween:Tween;
-			var curTween:Tween = rootTween;
-			
-			for (i = 1; i < timing.length; ++i)
-			{
-				nextTween = new Tween(target, duration * (timing[i]), Transitions.EASE_IN);
-				nextTween.moveTo(positions[i].x, positions[i].y);
-				curTween.nextTween = nextTween;
-				
-				//move it forward
-				curTween = nextTween;
-			}
-			
-			target.pivotX = target.width / 2;
+			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
 			
-			return rootTween;
+			return tween;
 		}
 		
 		public static function SlideOutLeft(target:DisplayObject, duration:Number):Tween
@@ -72,26 +45,12 @@ package animations.slidingexits
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x-100,target.y)];
 			
-			var rootTween:Tween = new Tween(target, duration * timing[0], Transitions.EASE_IN);
-			rootTween.moveTo(positions[0].x, positions[0].y);
+			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions);
 			
-			var nextTween:Tween;
-			var curTween:Tween = rootTween;
-			
-			for (i = 1; i < timing.length; ++i)
-			{
-				nextTween = new Tween(target, duration * (timing[i]), Transitions.EASE_IN);
-				nextTween.moveTo(positions[i].x, positions[i].y);
-				curTween.nextTween = nextTween;
-				
-				//move it forward
-				curTween = nextTween;
-			}
-			
-			target.pivotX = target.width / 2;
+			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
 			
-			return rootTween;
+			return tween;
 		}
 		
 		public static function SlideOutRight(target:DisplayObject, duration:Number):Tween
@@ -100,26 +59,12 @@ package animations.slidingexits
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x+100,target.y)];
 			
-			var rootTween:Tween = new Tween(target, duration * timing[0], Transitions.EASE_IN);
-			rootTween.moveTo(positions[0].x, positions[0].y);
+			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions);
 			
-			var nextTween:Tween;
-			var curTween:Tween = rootTween;
-			
-			for (i = 1; i < timing.length; ++i)
-			{
-				nextTween = new Tween(target, duration * (timing[i]), Transitions.EASE_IN);
-				nextTween.moveTo(positions[i].x, positions[i].y);
-				curTween.nextTween = nextTween;
-				
-				//move it forward
-				curTween = nextTween;
-			}
-			
-			target.pivotX = target.width / 2;
+			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
 			
-			return rootTween;
+			return tween;
 		}
 	}
 
