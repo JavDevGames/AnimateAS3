@@ -1,6 +1,6 @@
 package animations.attentionseekers 
 {
-	import animations.TweenUtil;
+	import animations.AnimateTweenUtils;
 	import flash.geom.Point;
 	import flash.sampler.NewObjectSample;
 	import starling.animation.Transitions;
@@ -20,7 +20,7 @@ package animations.attentionseekers
 														new Point(target.x, target.y-15),new Point(target.x, target.y),new Point(target.x, target.y-4),new Point(target.x, target.y)];
 														
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions);
 			return tween;
 		}
 		
@@ -30,7 +30,7 @@ package animations.attentionseekers
 			var timing:Vector.<Number> = new <Number>[0, 0.25, 0.25, 0.25, 0.25];
 			var opacities:Vector.<Number> = new <Number>[0, 1, 0,1,1];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, null, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, null, null, opacities);
 			return tween;
 		}
 		
@@ -51,7 +51,7 @@ package animations.attentionseekers
 														new Point(0, 0)
 													];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, null, null, null, null, skews);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, null, null, null, null, skews);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;
@@ -65,7 +65,7 @@ package animations.attentionseekers
 			var timing:Vector.<Number> = new <Number>[0, 0.5, 0.5];
 			var scales:Vector.<Point> = new <Point>[new Point(1,1), new Point(1.05, 1.05), new Point(1,1)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, null, scales);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, null, scales);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;
@@ -87,7 +87,7 @@ package animations.attentionseekers
 														new Point(1, 1)														
 													];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, null, scales);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, null, scales);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;
@@ -113,7 +113,7 @@ package animations.attentionseekers
 														new Point(target.x, target.y),
 													];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;
@@ -127,14 +127,14 @@ package animations.attentionseekers
 			var timing:Vector.<Number> = new <Number>[0,0.2,0.2,0.2,0.2,0.2];
 			var rotations:Vector.<Number> = new <Number>[
 														0,
-														15 * DEG_TO_RAD,
-														-10 * DEG_TO_RAD,
-														5 * DEG_TO_RAD,
-														-5 * DEG_TO_RAD,
+														15 * AnimateTweenUtils.DEG_TO_RAD,
+														-10 * AnimateTweenUtils.DEG_TO_RAD,
+														5 * AnimateTweenUtils.DEG_TO_RAD,
+														-5 * AnimateTweenUtils.DEG_TO_RAD,
 														0
 													];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, null, null, null, rotations);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, null, null, null, rotations);
 			
 			target.pivotX = target.width / 2;
 			target.pivotX = target.height / 2;
@@ -162,19 +162,19 @@ package animations.attentionseekers
 													
 			var rotations:Vector.<Number> = new <Number>[
 														0,
-														-3 * DEG_TO_RAD,
-														-3 * DEG_TO_RAD,
-														3 * DEG_TO_RAD,
-														-3 * DEG_TO_RAD,
-														3 * DEG_TO_RAD,
-														-3 * DEG_TO_RAD,
-														3 * DEG_TO_RAD,
-														-3* DEG_TO_RAD,
-														3 * DEG_TO_RAD,
+														-3 * AnimateTweenUtils.DEG_TO_RAD,
+														-3 * AnimateTweenUtils.DEG_TO_RAD,
+														3 * AnimateTweenUtils.DEG_TO_RAD,
+														-3 * AnimateTweenUtils.DEG_TO_RAD,
+														3 * AnimateTweenUtils.DEG_TO_RAD,
+														-3 * AnimateTweenUtils.DEG_TO_RAD,
+														3 * AnimateTweenUtils.DEG_TO_RAD,
+														-3* AnimateTweenUtils.DEG_TO_RAD,
+														3 * AnimateTweenUtils.DEG_TO_RAD,
 														0
 													];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, null, scales, null, rotations);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, null, scales, null, rotations);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;
@@ -197,15 +197,15 @@ package animations.attentionseekers
 													];
 			var rotations:Vector.<Number> = new <Number>[
 														0,
-														-5 * DEG_TO_RAD,
-														3 * DEG_TO_RAD,
-														3 * DEG_TO_RAD,
-														2 * DEG_TO_RAD,
-														-1 * DEG_TO_RAD,
+														-5 * AnimateTweenUtils.DEG_TO_RAD,
+														3 * AnimateTweenUtils.DEG_TO_RAD,
+														3 * AnimateTweenUtils.DEG_TO_RAD,
+														2 * AnimateTweenUtils.DEG_TO_RAD,
+														-1 * AnimateTweenUtils.DEG_TO_RAD,
 														0
 													];
 													
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, null, rotations);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, null, rotations);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;

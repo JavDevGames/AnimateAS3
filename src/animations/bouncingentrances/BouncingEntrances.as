@@ -1,6 +1,6 @@
 package animations.bouncingentrances 
 {
-	import animations.TweenUtil;
+	import animations.AnimateTweenUtils;
 	import flash.geom.Point;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
@@ -25,7 +25,7 @@ package animations.bouncingentrances
 														new Point(1,1)
 													];
 													
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, null, scales, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, null, scales, opacities);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;
@@ -46,7 +46,7 @@ package animations.bouncingentrances
 														new Point(target.x, target.y+5)
 													];
 													
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 		
@@ -63,7 +63,7 @@ package animations.bouncingentrances
 														new Point(target.x, target.y-5)
 													];
 													
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 		
@@ -80,7 +80,7 @@ package animations.bouncingentrances
 														new Point(target.x+5, target.y)
 													];
 													
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 		
@@ -96,7 +96,7 @@ package animations.bouncingentrances
 														new Point(target.x-5, target.y)
 													];
 													
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 	}

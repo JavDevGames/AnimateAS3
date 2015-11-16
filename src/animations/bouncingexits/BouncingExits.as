@@ -1,6 +1,6 @@
 package animations.bouncingexits 
 {
-	import animations.TweenUtil;
+	import animations.AnimateTweenUtils;
 	import flash.geom.Point;
 	import starling.animation.Tween;
 	import starling.display.DisplayObject;
@@ -24,7 +24,7 @@ package animations.bouncingexits
 														new Point(0.3, 0.3)
 														];
 													
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, null, scales, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, null, scales, opacities);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;
@@ -45,7 +45,7 @@ package animations.bouncingexits
 														new Point(target.x, target.y+500)
 													];
 													
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;
@@ -65,7 +65,7 @@ package animations.bouncingexits
 														new Point(target.x, target.y-500)
 													];
 													
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;
@@ -85,7 +85,7 @@ package animations.bouncingexits
 														new Point(target.x-500, target.y)
 													];
 													
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;
@@ -105,7 +105,7 @@ package animations.bouncingexits
 														new Point(target.x+500, target.y)
 													];
 													
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			
 			target.pivotX = target.width / 2;
 			target.pivotY = target.height / 2;

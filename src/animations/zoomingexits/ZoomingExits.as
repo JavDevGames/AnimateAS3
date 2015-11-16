@@ -1,6 +1,6 @@
 package animations.zoomingexits 
 {
-	import animations.TweenUtil;
+	import animations.AnimateTweenUtils;
 	import flash.geom.Point;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
@@ -18,7 +18,7 @@ package animations.zoomingexits
 			var scales:Vector.<Point> = new <Point>[new Point(1,1), new Point(0.3,0.3)];
 			var opacities:Vector.<Number> = new <Number>[1, 0];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, null, scales, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, null, scales, opacities);
 			
 			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
@@ -34,7 +34,7 @@ package animations.zoomingexits
 			var scales:Vector.<Point> = new <Point>[new Point(1,1), new Point(0.475,0.475), new Point(1,1)]
 			var positions:Vector.<Point> = new <Point>[new Point(target.x,target.y), new Point(target.x, target.y+60), new Point(target.x,target.y-500)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, scales, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, scales, opacities);
 			
 			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
@@ -50,7 +50,7 @@ package animations.zoomingexits
 			var scales:Vector.<Point> = new <Point>[new Point(1,1),new Point(0.475,0.475), new Point(0.1, 0.1)]
 			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y),new Point(target.x, target.y-60), new Point(target.x,target.y+500)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, scales, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, scales, opacities);
 			
 			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
@@ -66,7 +66,7 @@ package animations.zoomingexits
 			var scales:Vector.<Point> = new <Point>[new Point(1,1), new Point(0.475, 0.475), new Point(0.1,0.1)]
 			var positions:Vector.<Point> = new <Point>[new Point(target.x,target.y), new Point(target.x+42, target.y), new Point(target.x-500,target.y)];			
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, scales, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, scales, opacities);
 			
 			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
@@ -82,7 +82,7 @@ package animations.zoomingexits
 			var scales:Vector.<Point> = new <Point>[new Point(1,1), new Point(0.475,0.475), new Point(0.1,0.1)]
 			var positions:Vector.<Point> = new <Point>[new Point(target.x,target.y), new Point(target.x-42, target.y), new Point(target.x+500,target.y)];			
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, scales, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, scales, opacities);
 			
 			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;

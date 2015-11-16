@@ -8,7 +8,7 @@ package animations
 	 * ...
 	 * @author Javier
 	 */
-	public class TweenUtil 
+	public class AnimateTweenUtils 
 	{
 		static public const SKEW_X:String = "skewX";
 		static public const SKEW_Y:String = "skewY";

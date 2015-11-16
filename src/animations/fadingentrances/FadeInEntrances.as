@@ -1,6 +1,6 @@
 package animations.fadingentrances
 {
-	import animations.TweenUtil;
+	import animations.AnimateTweenUtils;
 	import flash.geom.Point;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
@@ -19,7 +19,7 @@ package animations.fadingentrances
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
 			var opacities:Vector.<Number> = new <Number>[0, 1];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, null, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, null, null, opacities);
 			
 			return tween;
 		}
@@ -31,7 +31,7 @@ package animations.fadingentrances
 			var opacities:Vector.<Number> = new <Number>[0, 1];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x,target.y-500), new Point(target.x, target.y)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 		
@@ -42,7 +42,7 @@ package animations.fadingentrances
 			var opacities:Vector.<Number> = new <Number>[0, 1];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x,-2000), new Point(target.x, target.y)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 		
@@ -53,7 +53,7 @@ package animations.fadingentrances
 			var opacities:Vector.<Number> = new <Number>[0, 1];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x-1000,target.y), new Point(target.x, target.y)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 		
@@ -64,7 +64,7 @@ package animations.fadingentrances
 			var opacities:Vector.<Number> = new <Number>[0, 1];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x-2000,target.y), new Point(target.x, target.y)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 		
@@ -75,7 +75,7 @@ package animations.fadingentrances
 			var opacities:Vector.<Number> = new <Number>[0, 1];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x+1000,target.y), new Point(target.x, target.y)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 		
@@ -86,7 +86,7 @@ package animations.fadingentrances
 			var opacities:Vector.<Number> = new <Number>[0, 1];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x+2000,target.y), new Point(target.x, target.y)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 		
@@ -97,7 +97,7 @@ package animations.fadingentrances
 			var opacities:Vector.<Number> = new <Number>[0, 1];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x,target.y+500), new Point(target.x, target.y)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 	
@@ -108,7 +108,7 @@ package animations.fadingentrances
 			var opacities:Vector.<Number> = new <Number>[0, 1];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x,target.y+2000), new Point(target.x, target.y)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions, null, opacities);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions, null, opacities);
 			return tween;
 		}
 	

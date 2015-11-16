@@ -1,6 +1,6 @@
 package animations.slidingexits 
 {
-	import animations.TweenUtil;
+	import animations.AnimateTweenUtils;
 	import flash.geom.Point;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
@@ -17,7 +17,7 @@ package animations.slidingexits
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x,target.y+100)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions);
 			
 			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
@@ -31,7 +31,7 @@ package animations.slidingexits
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x,target.y-100)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions);
 			
 			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
@@ -45,7 +45,7 @@ package animations.slidingexits
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x-100,target.y)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions);
 			
 			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
@@ -59,7 +59,7 @@ package animations.slidingexits
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
 			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x+100,target.y)];
 			
-			var tween:Tween = TweenUtil.ConfigureTween(target, duration, timing, positions);
+			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions);
 			
 			target.pivotX = target.width/2;
 			target.pivotY = target.height / 2;
