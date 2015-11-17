@@ -10,7 +10,7 @@ package animations.fadingexits
 	 * ...
 	 * @author Javier
 	 */
-	public class FadingExits
+	public class AnimFadingExits
 	{
 		
 		public static function FadeOut(target:DisplayObject, duration:Number):Tween

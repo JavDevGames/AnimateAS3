@@ -10,7 +10,7 @@ package animations.fadingentrances
 	 * ...
 	 * @author Javier
 	 */
-	public class FadeInEntrances
+	public class AnimFadeInEntrances
 	{
 		
 		public static function FadeIn(target:DisplayObject, duration:Number):Tween

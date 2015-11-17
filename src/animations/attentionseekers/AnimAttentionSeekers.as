@@ -10,7 +10,7 @@ package animations.attentionseekers
 	 * ...
 	 * @author Javier
 	 */
-	public class AttentionSeekers 
+	public class AnimAttentionSeekers 
 	{
 		public static function Bounce(target:DisplayObject, duration:Number):Tween
 		{

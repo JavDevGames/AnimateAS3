@@ -1,16 +1,16 @@
 package 
 {
-	import animations.attentionseekers.AttentionSeekers;
-	import animations.bouncingentrances.BouncingEntrances;
-	import animations.bouncingexits.BouncingExits;
-	import animations.fadingentrances.FadeInEntrances;
-	import animations.fadingexits.FadingExits;
-	import animations.rotatingentrances.RotatingEntrances;
-	import animations.rotatingexits.RotatingExits;
-	import animations.slidingentrances.SlidingEntrances;
-	import animations.slidingexits.SlidingExits;
-	import animations.zoomingentrances.ZoomingEntrances;
-	import animations.zoomingexits.ZoomingExits;
+	import animations.attentionseekers.AnimAttentionSeekers;
+	import animations.bouncingentrances.AnimBouncingEntrances;
+	import animations.bouncingexits.AnimBouncingExits;
+	import animations.fadingentrances.AnimFadeInEntrances;
+	import animations.fadingexits.AnimFadingExits;
+	import animations.rotatingentrances.AnimRotatingEntrances;
+	import animations.rotatingexits.AnimRotatingExits;
+	import animations.slidingentrances.AnimSlidingEntrances;
+	import animations.slidingexits.AnimSlidingExits;
+	import animations.zoomingentrances.AnimZoomingEntrances;
+	import animations.zoomingexits.AnimZoomingExits;
 	import flash.display.BitmapData;
 	import flash.events.Event;
 	import starling.animation.Tween;
@@ -37,20 +37,20 @@ package
 			mTestImage.x = Starling.current.viewPort.width / 2 - mTestImage.width / 2;
 			mTestImage.y = Starling.current.viewPort.height / 2 - mTestImage.height / 2;
 			
-			mAnims = new <Function>[AttentionSeekers.Bounce, AttentionSeekers.Flash, AttentionSeekers.Flash, AttentionSeekers.Pulse, AttentionSeekers.RubberBand, AttentionSeekers.Shake,
-									AttentionSeekers.Swing, AttentionSeekers.Tada, AttentionSeekers.Wobble,
-									BouncingEntrances.BounceIn, BouncingEntrances.BounceInDown, BouncingEntrances.BounceInLeft, BouncingEntrances.BounceInRight, BouncingEntrances.BounceInUp,
-									BouncingExits.BounceOut, BouncingExits.BounceOutDown, BouncingExits.BounceOutLeft, BouncingExits.BounceOutRight, BouncingExits.BounceOutUp,
-									FadeInEntrances.FadeIn, FadeInEntrances.FadeInDown, FadeInEntrances.FadeInDownBig, FadeInEntrances.FadeInLeft, FadeInEntrances.FadeInLeftBig, FadeInEntrances.FadeInRight,
-									FadeInEntrances.FadeInRightBig, FadeInEntrances.FadeInUp, FadeInEntrances.FadeInUpBig,
-									FadingExits.FadeOut, FadingExits.FadeOutDown, FadingExits.FadeOutDownBig, FadingExits.FadeOutLeft, FadingExits.FadeOutLeftBig, FadingExits.FadeOutRight, FadingExits.FadeOutRightBig,
-									FadingExits.FadeOutUp, FadingExits.FadeOutUpBig,
-									RotatingEntrances.RotateIn, RotatingEntrances.RotateInDownLeft, RotatingEntrances.RotateInDownRight, RotatingEntrances.RotateInUpLeft, RotatingEntrances.RotateInUpRight,
-									RotatingExits.RotateOut, RotatingExits.RotateOutDownLeft, RotatingExits.RotateOutDownRight, RotatingExits.RotateOutUpLeft, RotatingExits.RotateOutUpRight,
-									SlidingEntrances.SlideInDown, SlidingEntrances.SlideInLeft, SlidingEntrances.SlideInRight, SlidingEntrances.SlideInUp,
-									SlidingExits.SlideOutDown, SlidingExits.SlideOutLeft, SlidingExits.SlideOutRight, SlidingExits.SlideOutUp,
-									ZoomingEntrances.ZoomIn, ZoomingEntrances.ZoomInDown, ZoomingEntrances.ZoomInLeft, ZoomingEntrances.ZoomInRight, ZoomingEntrances.ZoomInUp,
-									ZoomingExits.ZoomOut, ZoomingExits.ZoomOutDown, ZoomingExits.ZoomOutLeft, ZoomingExits.ZoomOutRight, ZoomingExits.ZoomOutUp];
+			mAnims = new <Function>[AnimAttentionSeekers.Bounce, AnimAttentionSeekers.Flash, AnimAttentionSeekers.Flash, AnimAttentionSeekers.Pulse, AnimAttentionSeekers.RubberBand, AnimAttentionSeekers.Shake,
+									AnimAttentionSeekers.Swing, AnimAttentionSeekers.Tada, AnimAttentionSeekers.Wobble,
+									AnimBouncingEntrances.BounceIn, AnimBouncingEntrances.BounceInDown, AnimBouncingEntrances.BounceInLeft, AnimBouncingEntrances.BounceInRight, AnimBouncingEntrances.BounceInUp,
+									AnimBouncingExits.BounceOut, AnimBouncingExits.BounceOutDown, AnimBouncingExits.BounceOutLeft, AnimBouncingExits.BounceOutRight, AnimBouncingExits.BounceOutUp,
+									AnimFadeInEntrances.FadeIn, AnimFadeInEntrances.FadeInDown, AnimFadeInEntrances.FadeInDownBig, AnimFadeInEntrances.FadeInLeft, AnimFadeInEntrances.FadeInLeftBig, AnimFadeInEntrances.FadeInRight,
+									AnimFadeInEntrances.FadeInRightBig, AnimFadeInEntrances.FadeInUp, AnimFadeInEntrances.FadeInUpBig,
+									AnimFadingExits.FadeOut, AnimFadingExits.FadeOutDown, AnimFadingExits.FadeOutDownBig, AnimFadingExits.FadeOutLeft, AnimFadingExits.FadeOutLeftBig, AnimFadingExits.FadeOutRight, AnimFadingExits.FadeOutRightBig,
+									AnimFadingExits.FadeOutUp, AnimFadingExits.FadeOutUpBig,
+									AnimRotatingEntrances.RotateIn, AnimRotatingEntrances.RotateInDownLeft, AnimRotatingEntrances.RotateInDownRight, AnimRotatingEntrances.RotateInUpLeft, AnimRotatingEntrances.RotateInUpRight,
+									AnimRotatingExits.RotateOut, AnimRotatingExits.RotateOutDownLeft, AnimRotatingExits.RotateOutDownRight, AnimRotatingExits.RotateOutUpLeft, AnimRotatingExits.RotateOutUpRight,
+									AnimSlidingEntrances.SlideInDown, AnimSlidingEntrances.SlideInLeft, AnimSlidingEntrances.SlideInRight, AnimSlidingEntrances.SlideInUp,
+									AnimSlidingExits.SlideOutDown, AnimSlidingExits.SlideOutLeft, AnimSlidingExits.SlideOutRight, AnimSlidingExits.SlideOutUp,
+									AnimZoomingEntrances.ZoomIn, AnimZoomingEntrances.ZoomInDown, AnimZoomingEntrances.ZoomInLeft, AnimZoomingEntrances.ZoomInRight, AnimZoomingEntrances.ZoomInUp,
+									AnimZoomingExits.ZoomOut, AnimZoomingExits.ZoomOutDown, AnimZoomingExits.ZoomOutLeft, AnimZoomingExits.ZoomOutRight, AnimZoomingExits.ZoomOutUp];
 			
 			SelectAnim(mTestImage, 1000);
 			

@@ -9,7 +9,7 @@ package animations.zoomingentrances
 	 * ...
 	 * @author Javier
 	 */
-	public class ZoomingEntrances
+	public class AnimZoomingEntrances
 	{
 		public static function ZoomIn(target:DisplayObject, duration:Number):Tween
 		{

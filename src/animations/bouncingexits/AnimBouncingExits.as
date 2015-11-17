@@ -8,7 +8,7 @@ package animations.bouncingexits
 	 * ...
 	 * @author Javier
 	 */
-	public class BouncingExits
+	public class AnimBouncingExits
 	{
 		public static function BounceOut(target:DisplayObject, duration:Number):Tween
 		{

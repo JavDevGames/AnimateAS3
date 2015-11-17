@@ -1,4 +1,4 @@
-package animations.slidingentrances 
+package animations.slidingexits 
 {
 	import animations.AnimateTweenUtils;
 	import flash.geom.Point;
@@ -9,13 +9,13 @@ package animations.slidingentrances
 	 * ...
 	 * @author Javier
 	 */
-	public class SlidingEntrances 
+	public class AnimSlidingExits
 	{
-		public static function SlideInDown(target:DisplayObject, duration:Number):Tween
+		public static function SlideOutDown(target:DisplayObject, duration:Number):Tween
 		{
 			var i:int;
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
-			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y-100), new Point(target.x,target.y)];
+			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x,target.y+100)];
 			
 			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions);
 			
@@ -25,11 +25,11 @@ package animations.slidingentrances
 			return tween;
 		}
 		
-		public static function SlideInUp(target:DisplayObject, duration:Number):Tween
+		public static function SlideOutUp(target:DisplayObject, duration:Number):Tween
 		{
 			var i:int;
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
-			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y-100), new Point(target.x,target.y)];
+			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x,target.y-100)];
 			
 			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions);
 			
@@ -39,11 +39,11 @@ package animations.slidingentrances
 			return tween;
 		}
 		
-		public static function SlideInLeft(target:DisplayObject, duration:Number):Tween
+		public static function SlideOutLeft(target:DisplayObject, duration:Number):Tween
 		{
 			var i:int;
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
-			var positions:Vector.<Point> = new <Point>[new Point(target.x+100, target.y), new Point(target.x,target.y)];
+			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x-100,target.y)];
 			
 			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions);
 			
@@ -53,11 +53,11 @@ package animations.slidingentrances
 			return tween;
 		}
 		
-		public static function SlideInRight(target:DisplayObject, duration:Number):Tween
+		public static function SlideOutRight(target:DisplayObject, duration:Number):Tween
 		{
 			var i:int;
 			var timing:Vector.<Number> = new <Number>[0, 0.9];
-			var positions:Vector.<Point> = new <Point>[new Point(target.x-100, target.y), new Point(target.x,target.y)];
+			var positions:Vector.<Point> = new <Point>[new Point(target.x, target.y), new Point(target.x+100,target.y)];
 			
 			var tween:Tween = AnimateTweenUtils.ConfigureTween(target, duration, timing, positions);
 			

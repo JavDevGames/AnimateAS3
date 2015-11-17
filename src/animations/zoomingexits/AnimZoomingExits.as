@@ -9,7 +9,7 @@ package animations.zoomingexits
 	 * ...
 	 * @author Javier
 	 */
-	public class ZoomingExits
+	public class AnimZoomingExits
 	{
 		public static function ZoomOut(target:DisplayObject, duration:Number):Tween
 		{

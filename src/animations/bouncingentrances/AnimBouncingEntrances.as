@@ -9,7 +9,7 @@ package animations.bouncingentrances
 	 * ...
 	 * @author Javier
 	 */
-	public class BouncingEntrances 
+	public class AnimBouncingEntrances 
 	{
 		public static function BounceIn(target:DisplayObject, duration:Number):Tween
 		{
